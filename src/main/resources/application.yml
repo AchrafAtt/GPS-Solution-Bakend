@@ -1,0 +1,29 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: backend
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/idirtrack?createDatabaseIfNotExist=true&useSSL=false&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: root@@0603
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQLDialect
+traccar:
+  api:
+    url: http://152.228.219.146:8082/api
+
+logging:
+  level:
+    org.springframework: DEBUG
+    hibernate: DEBUG
+    security: DEBUG
+    com.idirtrack: DEBUG
+
+cors:
+  allowed-origins: http://localhost:3000
